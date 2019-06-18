@@ -16,6 +16,7 @@ export class Network extends Model {
 const sequelize = new Sequelize({
   dialect: "sqlite",
   storage: "./dist/data/ipv4-blocks.sqlite",
+  logging: false,
 })
 
 Network.init(

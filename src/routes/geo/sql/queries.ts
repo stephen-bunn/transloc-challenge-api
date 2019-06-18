@@ -6,7 +6,7 @@ with total as (
 		geo_ipv4
 	where
 		latitude between :minLat and :maxLat
-		and longitude between :minLon and :maxLon
+		and longitude between :minLng and :maxLng
 )
 
 select
@@ -18,6 +18,6 @@ from
 	,total
 where
 	latitude between :minLat and :maxLat
-	and longitude between :minLon and :maxLon
+	and longitude between :minLng and :maxLng
 group by latitude, longitude
 `
