@@ -13,9 +13,11 @@ export class Network extends Model {
   public accuracy_radius!: number
 }
 
-const sequelize = new Sequelize({
-  dialect: "sqlite",
-  storage: "./dist/data/ipv4-blocks.sqlite",
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: "postgres",
+  dialectOptions: {
+    ssl: true,
+  },
   logging: false,
 })
 

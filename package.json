@@ -46,6 +46,7 @@
     "geojson": "^0.5.0",
     "lodash": "^4.17.11",
     "morgan": "^1.9.1",
+    "pg": "^7.11.0",
     "sequelize": "^5.8.9",
     "sqlite3": "^4.0.9",
     "supercluster": "^6.0.1"
