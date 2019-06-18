@@ -13,7 +13,7 @@ select
   ,longitude
   ,(cast(count(*) as float) / total) as weight
 from
-  geo_ipv4
+  public.geo_ipv4
   ,total
 where
     latitude between :minLat and :maxLat
