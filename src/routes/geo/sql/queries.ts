@@ -2,7 +2,8 @@ export const heatmapQuery = `
 with total as (
   select
     count(*) as total
-  from geo_ipv4
+  from
+    public.geo_ipv4
   where
     latitude between :minLat and :maxLat
     and longitude between :minLng and :maxLng

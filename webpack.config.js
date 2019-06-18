@@ -10,12 +10,7 @@ module.exports = env => {
     entry: "./src/index.ts",
     mode: "development",
     target: "node",
-    plugins: [
-      new IgnorePlugin(/^pg-native$/),
-      new DotenvPlugin(),
-      new DefinePlugin({ "global.GENTLY": false }),
-      new CopyPlugin([{ from: "src/models/data/", to: "data/" }]),
-    ],
+    plugins: [new IgnorePlugin(/^pg-native$/), new DotenvPlugin(), new DefinePlugin({ "global.GENTLY": false })],
     module: {
       rules: [
         {
