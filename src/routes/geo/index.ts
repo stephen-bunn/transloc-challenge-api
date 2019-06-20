@@ -13,7 +13,7 @@ geoRouter.route("/ipv4").get(async (req: Request, res: Response) => {
   let [minLat = 0, maxLat = 0] = _.map(_.split(_.get(req.query, "lat"), ","), parseFloat)
   let [minLng = 0, maxLng = 0] = _.map(_.split(_.get(req.query, "lon"), ","), parseFloat)
 
-  let results: { latitude: number; longitude: number; weight: number }[] = await sequelize.query(heatmapQuery, {
+  let results: { lat: number; lng: number; weight: number }[] = await sequelize.query(heatmapQuery, {
     replacements: { minLat, maxLat, minLng, maxLng },
     type: Sequelize.QueryTypes.SELECT,
   })
@@ -23,7 +23,7 @@ geoRouter.route("/ipv4").get(async (req: Request, res: Response) => {
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [result.latitude, result.longitude],
+        coordinates: [result.lat, result.lng],
       },
       properties: {
         weight: result.weight,

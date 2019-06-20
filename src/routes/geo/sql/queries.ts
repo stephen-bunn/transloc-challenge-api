@@ -1,23 +1,3 @@
 export const heatmapQuery = `
-with total as (
-  select
-    count(*) as total
-  from
-    public."geo_ipv4"
-  where
-    latitude between :minLat and :maxLat
-    and longitude between :minLng and :maxLng
-)
-
-select
-  latitude
-  ,longitude
-  ,(cast(count(*) as float) / total) as weight
-from
-  public."geo_ipv4"
-  ,total
-where
-    latitude between :minLat and :maxLat
-    and longitude between :minLng and :maxLng
-group by latitude, longitude, total
+select lat, lng, weight from geolite.get_weighted_points(:minLng, :minLat, :maxLng, :maxLat)
 `
