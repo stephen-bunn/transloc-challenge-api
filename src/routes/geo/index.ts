@@ -4,7 +4,6 @@ import Sequelize from "sequelize"
 import { Feature, FeatureCollection } from "geojson"
 
 import sequelize from "@/models"
-
 import { heatmapQuery } from "@/routes/geo/sql/queries"
 
 const geoRouter: Router = express.Router()
