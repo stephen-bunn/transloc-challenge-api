@@ -47,7 +47,7 @@
     "lodash": "^4.17.11",
     "morgan": "^1.9.1",
     "pg": "^7.11.0",
-    "sequelize": "^5.8.9",
+    "sequelize": "^5.15.1",
     "sqlite3": "^4.0.9",
     "supercluster": "^6.0.1"
   }
